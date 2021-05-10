@@ -1,0 +1,6 @@
+{ "class": "go.TreeModel",
+  "nodeDataArray": [
+{"key":0, "text":"hello", "loc":"0 0"},
+{"key":-2, "parent":0, "text":"bonjour", "brush":"coral", "dir":"right", "loc":"50 10.5"}
+ ]
+}

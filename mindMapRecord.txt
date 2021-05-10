@@ -1,0 +1,15 @@
+{ "class": "TreeModel",
+  "nodeDataArray": [
+{"key":0,"text":"root","loc":"0 0"},
+{"text":"amine","parent":0,"key":-12,"brush":"palevioletred","loc":"50 -13"},
+{"text":"like","parent":-12,"key":-13,"brush":"palevioletred","loc":"105.4072265625 -26"},
+{"text":"you","dir":"right","parent":0,"key":-14,"brush":"coral","loc":"73 48"},
+{"text":"work","dir":"right","parent":-14,"key":-15,"brush":"coral","loc":"123 35"},
+{"text":"play","dir":"right","parent":-14,"key":-16,"brush":"coral","loc":"123 61"},
+{"text":"eat","parent":-12,"key":-17,"brush":"palevioletred","loc":"105.4072265625 0"},
+{"text":"potatoes","parent":-13,"key":-18,"brush":"palevioletred","loc":"155.4072265625 -26"},
+{"text":"tomatoes","parent":-17,"key":-19,"brush":"palevioletred","loc":"155.4072265625 0"},
+{"text":"Because reasons","parent":-18,"key":-20,"brush":"palevioletred","loc":"225.28076171875 -26"},
+{"text":"hard","dir":"right","parent":-15,"key":-21,"brush":"coral","loc":"173 35"},
+{"text":"more","dir":"right","parent":-16,"key":-22,"brush":"coral","loc":"173 61"}
+]}
