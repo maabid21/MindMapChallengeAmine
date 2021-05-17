@@ -22,16 +22,16 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Amine Med</o:Author>
   <o:LastAuthor>Amine Med</o:LastAuthor>
-  <o:Revision>14</o:Revision>
-  <o:TotalTime>69</o:TotalTime>
+  <o:Revision>17</o:Revision>
+  <o:TotalTime>77</o:TotalTime>
   <o:Created>2021-05-10T13:36:00Z</o:Created>
-  <o:LastSaved>2021-05-10T14:46:00Z</o:LastSaved>
+  <o:LastSaved>2021-05-17T06:11:00Z</o:LastSaved>
   <o:Pages>3</o:Pages>
-  <o:Words>428</o:Words>
-  <o:Characters>2355</o:Characters>
-  <o:Lines>19</o:Lines>
-  <o:Paragraphs>5</o:Paragraphs>
-  <o:CharactersWithSpaces>2778</o:CharactersWithSpaces>
+  <o:Words>477</o:Words>
+  <o:Characters>2628</o:Characters>
+  <o:Lines>21</o:Lines>
+  <o:Paragraphs>6</o:Paragraphs>
+  <o:CharactersWithSpaces>3099</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -60,6 +60,7 @@ w\:* {behavior:url(#default#VML);}
    <w:BreakWrappedTables/>
    <w:SplitPgBreakAndParaMark/>
   </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
   <m:mathPr>
    <m:mathFont m:val="Cambria Math"/>
    <m:brkBin m:val="before"/>
@@ -655,10 +656,10 @@ w\:* {behavior:url(#default#VML);}
 @font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
+	mso-font-charset:1;
 	mso-generic-font-family:roman;
 	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+	mso-font-signature:0 0 0 0 0 0;}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{mso-style-unhide:no;
@@ -687,7 +688,8 @@ h2
 	mso-fareast-font-family:"Times New Roman";
 	mso-fareast-theme-font:minor-fareast;}
 a:link, span.MsoHyperlink
-	{mso-style-priority:99;
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
 	color:blue;
 	text-decoration:underline;
 	text-underline:single;}
@@ -760,18 +762,6 @@ p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxS
 	font-family:"Times New Roman",serif;
 	mso-fareast-font-family:"Times New Roman";
 	mso-fareast-theme-font:minor-fareast;}
-p.msonormal0, li.msonormal0, div.msonormal0
-	{mso-style-name:msonormal;
-	mso-style-unhide:no;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	mso-fareast-font-family:"Times New Roman";
-	mso-fareast-theme-font:minor-fareast;}
 span.Heading2Char
 	{mso-style-name:"Heading 2 Char";
 	mso-style-noshow:yes;
@@ -793,6 +783,18 @@ span.Heading2Char
 	color:#2E74B5;
 	mso-themecolor:accent1;
 	mso-themeshade:191;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;}
 span.SpellE
 	{mso-style-name:"";
 	mso-spl-e:yes;}
@@ -929,24 +931,24 @@ mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-fareast-font-family:
 "Times New Roman";mso-ansi-language:EN-US'>GoJS</span></span><span lang=EN-US
-style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'> GitHub
-repository <span class=SpellE>est</span> (<a
+style='mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US'>
+GitHub repository <span class=SpellE>est</span> (<a
 href="https://github.com/NorthwoodsSoftware/GoJS-Samples/search?q=setDataProperty&amp;type=Code">https://github.com/NorthwoodsSoftware/GoJS-Samples/search?q=setDataProperty&amp;type=Code</a>).
 <o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
 mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Ce projet
-a &eacute;t&eacute; d&eacute;velopp&eacute; sous Windows 10.<o:p></o:p></span></p>
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'>Ce
+projet a &eacute;t&eacute; d&eacute;velopp&eacute; sous Windows 10.<o:p></o:p></span></p>
 
-<h2><span style='mso-fareast-font-family:"Times New Roman"'>Pr&eacute;requis pour
-<span class=SpellE>MindMapChallengeAmine</span><o:p></o:p></span></h2>
+<h2><span style='mso-fareast-font-family:"Times New Roman"'>Pr&eacute;requis
+pour <span class=SpellE>MindMapChallengeAmine</span><o:p></o:p></span></h2>
 
 <p class=MsoNormal><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
 mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>T&eacute;l&eacute;charger
@@ -954,16 +956,16 @@ le projet du lien GitHub&nbsp;:<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>D&eacute;compresser
-et copier le projet dans votre <span class=SpellE>localhost</span> id&eacute;alement&nbsp;dans
-: C:\xampp\htdocs\<o:p></o:p></span></p>
+et copier le projet dans votre <span class=SpellE>localhost</span>
+id&eacute;alement&nbsp;dans : C:\xampp\htdocs\<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Normalement,
@@ -974,7 +976,7 @@ test&eacute;, dans mon cas j&#8217;utilise <span class=SpellE>xampp</span>.<o:p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Ouvrir
@@ -983,57 +985,69 @@ class=SpellE>MindMapChallengeAmine</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>L&#8217;&eacute;tat
 par d&eacute;faut de la <span class=SpellE>mind</span> <span class=SpellE>map</span>
-est charg&eacute; &agrave; partir du fichier texte &laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo;
-sauvegard&eacute; dans r&eacute;pertoire du projet (racine).<o:p></o:p></span></p>
+est charg&eacute; &agrave; partir du fichier texte
+&laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo; sauvegard&eacute; dans le r&eacute;pertoire
+du projet (racine).<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Chaque
 fois l&#8217;&eacute;tat du <span class=SpellE>mind</span> <span class=SpellE>map</span>
-est modifi&eacute; un nouveau fichier texte est cr&eacute;&eacute; dans le r&eacute;pertoire
-de t&eacute;l&eacute;chargement par d&eacute;faut. Dans mon cas&nbsp;par exemple
-: &laquo;&nbsp;C:\Users\moham\Downloads&nbsp;&raquo; <o:p></o:p></span></p>
+est modifi&eacute; un nouveau fichier texte est cr&eacute;&eacute; dans le
+r&eacute;pertoire de t&eacute;l&eacute;chargement par d&eacute;faut. Dans mon
+cas&nbsp;par exemple : &laquo;&nbsp;C:\Users\moham\Downloads&nbsp;&raquo; <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Si
 vous choisissez de modifier le <span class=SpellE>mind</span> <span
-class=SpellE>map</span> &agrave; partir de l&#8217;&eacute;diteur n&#8217;oublier
+class=SpellE>map</span> &agrave; partir de l&#8217;&eacute;diteur graphique n&#8217;oublier
 pas de cliquer sur le bouton <span class=SpellE><b style='mso-bidi-font-weight:
 normal'>save</b></span>.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Si
 vous utilisez les formulaires comme demand&eacute; dans la sp&eacute;cification
 du challenge, le sauvegarde est lanc&eacute; automatiquement.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+<p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Dans
+</span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Il
+est aussi possible de copier le contenu d&#8217;un fichier dans \<span
+class=SpellE>Downloads</span> et le coller directement dans la grande zone de
+texte en bas de la page html et cliquer sur <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Load</b></span>. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Durant
 une session de travail, l&#8217;&eacute;tat du <span class=SpellE>mind</span> <span
 class=SpellE>map</span> est gard&eacute; en m&eacute;moire.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Si
@@ -1043,17 +1057,21 @@ charg&eacute;. <o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
-style='mso-fareast-font-family:"Times New Roman"'>Persistance</span>&nbsp;</span></b><span
-style='mso-fareast-font-family:"Times New Roman"'>: si vous voulez trouver le dernier
-&eacute;tat que vous avez cr&eacute;&eacute;, il <b style='mso-bidi-font-weight:
-normal'>faut remplacer le fichier</b> &laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo;
-dans le dossier du projet par celui dans <b style='mso-bidi-font-weight:normal'>T&eacute;l&eacute;chargement</b>,
-le plus r&eacute;cent, <b style='mso-bidi-font-weight:normal'>avant</b> d&#8217;ouvrir
-la page.<o:p></o:p></span></p>
+style='mso-fareast-font-family:"Times New Roman"'>Persistance</span>&nbsp;</b><span
+style='mso-fareast-font-family:"Times New Roman"'>: si vous voulez trouver le
+dernier &eacute;tat que vous avez cr&eacute;&eacute;, il <b style='mso-bidi-font-weight:
+normal'>faut remplacer le fichier</b>
+&laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo; dans le dossier du projet par celui
+dans <b style='mso-bidi-font-weight:normal'>T&eacute;l&eacute;chargement</b>,
+le plus r&eacute;cent, <b style='mso-bidi-font-weight:normal'>avant</b>
+d&#8217;ouvrir la page. Ou bien copier le contenu du fichier et le coller
+directement dans la grande zone de texte en bas de la page html et cliquer sur <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Load</b></span><b
+style='mso-bidi-font-weight:normal'>.</b><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
@@ -1062,10 +1080,10 @@ la page.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
 <h2><span style='mso-fareast-font-family:"Times New Roman"'>Pr&eacute;requis
-pour un <span class=SpellE>storage</span> <span class=SpellE>backend</span> dans
-SQL <o:p></o:p></span></h2>
+pour un <span class=SpellE>storage</span> <span class=SpellE>backend</span>
+dans SQL <o:p></o:p></span></h2>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>T&eacute;l&eacute;charger
@@ -1073,7 +1091,7 @@ et installer <span class=SpellE>xampp</span>.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><span style='mso-fareast-font-family:
@@ -1083,7 +1101,7 @@ faut arr&ecirc;ter <span class=SpellE>iis</span> et Skype.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Lancer
@@ -1091,7 +1109,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Ouvrir
@@ -1099,7 +1117,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>D&eacute;marrer
@@ -1107,7 +1125,7 @@ Apache et MySQL<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Cliquer
@@ -1115,7 +1133,7 @@ sur Admin de MySQL pour lancer <span class=SpellE>phpMyAdmin</span><o:p></o:p></
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Pour
@@ -1123,22 +1141,22 @@ sauvegarder le <span class=SpellE>mind</span> <span class=SpellE>map</span>
 dans une base de donn&eacute;es, par exemple&nbsp;: 1) cr&eacute;er une base de
 donn&eacute;es <span class=SpellE>mysql</span> base <span class=SpellE>mindmapdb.frm</span>.
 2) cr&eacute;er une table <span class=SpellE><span class=GramE>mindmaptable.ibd</span></span><span
-class=GramE> <span style='mso-spacerun:yes'>&nbsp;</span>avec</span> 5 colonnes:
-id, <span class=SpellE>leafkey</span>, parent, <span class=SpellE>text</span>, <span
-class=SpellE>brush</span>, <span class=SpellE>dir</span>, loc.<o:p></o:p></span></p>
+class=GramE><span style='mso-spacerun:yes'>&nbsp; </span>avec</span> 5
+colonnes: id, <span class=SpellE>leafkey</span>, parent, <span class=SpellE>text</span>,
+<span class=SpellE>brush</span>, <span class=SpellE>dir</span>, loc.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>La
 base de donn&eacute;es est cr&eacute;&eacute;e avec <span class=SpellE>phpMyAdmin</span>.
-Le <span class=SpellE>localhost</span> sous <span class=SpellE>xampp.<o:p></o:p></span></span></p>
+Le <span class=SpellE>localhost</span> sous <span class=SpellE>xampp</span>.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>-<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>La
@@ -1154,8 +1172,8 @@ le bouton pour ex&eacute;cuter une action et non pas sur entr&eacute;e.<o:p></o:
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
-<h2><span lang=EN-US style='mso-fareast-font-family:"Times New Roman";
-mso-ansi-language:EN-US'>Minimal Sample<o:p></o:p></span></h2>
+<h2><span style='mso-fareast-font-family:"Times New Roman"'>Minimal <span
+class=SpellE>Sample</span><o:p></o:p></span></h2>
 
 <p class=MsoNormal><span style='mso-no-proof:yes'>Pour ajouter un noeud sous la
 racine (qui represenete le niveau 0), laisser le champs path vide et remplissez
@@ -1185,7 +1203,7 @@ seulement le text.<o:p></o:p></span></p>
  style='width:281.4pt;height:129.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="README_files/image001.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=469 height=216
-src="README_files/image003.jpg" v:shapes="Picture_x0020_3"><![endif]></span><span
+src="README_files/image002.jpg" v:shapes="Picture_x0020_3"><![endif]></span><span
 lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:yes'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
@@ -1211,9 +1229,8 @@ mso-ansi-language:EN-US'>The <span class=SpellE>GoJS</span> </span><span
 style='mso-fareast-font-family:"Times New Roman"'><a
 href="https://gojs.net/latest/license.html"><span lang=EN-US style='mso-ansi-language:
 EN-US'>software license</span></a></span><span lang=EN-US style='mso-fareast-font-family:
-"Times New Roman";mso-ansi-language:EN-US'>. </span><span style='mso-fareast-font-family:
-"Times New Roman"'>Copyright (c) <span class=SpellE>Northwoods</span> Software
-Corporation <o:p></o:p></span></p>
+"Times New Roman";mso-ansi-language:EN-US'>. Copyright (c) <span class=SpellE>Northwoods</span>
+Software Corporation <o:p></o:p></span></p>
 
 </div>
 

@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="assets/css/style.css"/> 
 <!-- Copyright 1998-2021 by Northwoods Software Corporation. -->
 <title>Mind Map</title>
-<!--<script src="api/assets/js/require.js"></script> -->
 <script src="api/assets/js/FileSaver.js"></script>
 </head>
 
@@ -26,7 +25,7 @@
   </nav>
   <div class="md:flex flex-col md:flex-row md:min-h-screen w-full max-w-screen-xl mx-auto">
     <!-- * * * * * * * * * * * * * -->
-    <!-- Start of GoJS sample code -->
+    <!-- Start of Mind map challenge sample code -->
     
     <script src="release/go.js"></script>
     <div class="p-4 w-full">
@@ -267,13 +266,13 @@
       var newnode = diagram.findNodeForData(newdata);
       if (newnode !== null) diagram.scrollToRect(newnode.actualBounds);
     }
-
 		
-	function addLeafManual(idea, abrush, adir, aparent)
+	function addLeafAndLink(idea, abrush, adir, aparent)
 	{
-		var iparent = parseInt(aparent)
-	// when the document is modified, add a "*" to the title and enable the "Save" button
-      myDiagram.addDiagramListener("Modified", function(e) {
+		var iparent = parseInt(aparent);
+		
+		// when the document is modified, add a "*" to the title and enable the "Save" button
+		myDiagram.addDiagramListener("Modified", function(e) {
         var button = document.getElementById("SaveButton");
         if (button) button.disabled = !myDiagram.isModified;
         var idx = document.title.indexOf("*");
@@ -284,17 +283,11 @@
         }
       });
 	  
-	 // copy the brush and direction to the new node data
-      //var newdata = { text: idea, brush: abrush, dir: adir, parent: aparent };
-	  var newdata = { text: idea, brush: "palevioletred", dir: "right", parent: iparent };
-	  //var newdata = { text: "ideaManual", brush: "palevioletred", dir: "right", parent: -22 };
+	  // copy the brush and direction to the new node data
+      var newdata = { text: idea, brush: abrush, dir: adir, parent: iparent };
+	  //var newdata = { text: idea, brush: "palevioletred", dir: "right", parent: iparent };
       myDiagram.model.addNodeData(newdata);
-      //layoutTree(oldnode);
       myDiagram.commitTransaction("Add Node");
-
-      // if the new node is off-screen, scroll the diagram to show the new node
-      //var newnode = myDiagram.findNodeForData(newdata);
-      //if (newnode !== null) diagram.scrollToRect(newnode.actualBounds);
 	}
 	
     function layoutTree(node) {
@@ -346,16 +339,13 @@
 
     // Show the diagram's model in JSON format
     function save() {
-      document.getElementById("mySavedModel").value = myDiagram.model.toJson();
-	  
-     saveStaticDataToFile();
-	  
+      document.getElementById("mySavedModel").value = myDiagram.model.toJson();	  
+      saveStaticDataToFile();	  
       myDiagram.isModified = false;
     }
     function load() {
       myDiagram.model = go.Model.fromJson(document.getElementById("mySavedModel").value);
     }
-	
 	
 	function saveStaticDataToFile() 
 	{
@@ -370,7 +360,7 @@
 <div id="sample">
   <div id="myDiagramDiv" style="border: solid 1px black; width:100%; height:300px;"></div>
   <p>
-    A mind map editor, this GUI allow to create, delete, copy, move and laid out leaf node and/or subtrees
+    A mind map editor, this GUI allows to create, delete, copy, move and laid out leaf node and/or subtrees
   </p>
   
    <p>
@@ -394,10 +384,10 @@
 <p style="color:red"><b>Warning: the current mind map will be deleted.</b></p>
 <form>
   <label for="rootname">root node name:</label>
-  <input type="text" id="rootname" name="rootname"><br><br>
+  <input type="text" id="rootname" name="rootname" onKeyPress="return disableEnterKey(event)"><br><br>
 </form>
 
-<button onclick="createRootFunction()">Create map root</button>
+<button onclick="createRoot()">Create map root</button>
 <p id="demoroot"></p>
 
 <h2>## Add a leaf (path) to the map</h2>
@@ -413,7 +403,7 @@
   <input type="text" id="leafvalue" name="leafvalue"><br><br>
 </form>
 
-<button onclick="addFunction()">Add Leaf</button>
+<button onclick="addLeaf(); afterAddLeaf()">Add Leaf</button>
 <p id="demoAdd"></p>
 <p id="demoEntry"></p><br>
 <p id="demoDebug"></p>
@@ -421,15 +411,14 @@
 <h2>## Read a leaf (path) of the map</h2>
 
 <p>Click the "Read Leaf" button to read a leaf in the specified path. The path is separated with / such as in this example: 
-"path": you/play
- If the leaf does not exist, nothing will be displayed.</p>
+"path": you/play.</p>
  
 <form>
   <label for="rpathname">path:</label>
-  <input type="text" id="rpathname" name="rpathname"><br><br>
+  <input type="text" id="rpathname" name="rpathname" onKeyPress="return disableEnterKey(event)"><br><br>
 </form>
 
-<button onclick="readFunction()">Read Lead</button>
+<button onclick="readLeaf(); afterReadLeaf()">Read Lead</button>
 <p id="demoRead"></p>
 <p id="demoShow"></p><br>
 <p id="demo"></p><br>
@@ -441,330 +430,441 @@ Expected response:
 }
 -->
 <h2>## Pretty print the whole tree of the mind map</h2>
-<button onclick="layoutAll()">Pretty print</button>
+<button onclick="layoutAll() ; clearLabels()">Pretty print</button>
 <p>
  The whole tree of the mind map is printed in the map editor at the <b>top of the page</b>.
 </p>
 <br />
 
 <script>
-function createRootFunction()
-{
-	var rootname_val = document.getElementById('rootname').value;
-	if(rootname_val != "")
+	function createRoot()
 	{
-		//var rootModel = "{\"class\": \"TreeModel\",\"nodeDataArray\": [{\"key\":0,\"text\":\"root\",\"loc\":\"0 0\"}]}";
-		var rootModel = "{\"class\": \"TreeModel\",\"nodeDataArray\": [{\"key\":0,\"text\":\"";
-		rootModel = rootModel.concat(rootname_val);
-		var rootEnding = "\",\"loc\":\"0 0\"}]}";
-		rootModel = rootModel + rootEnding;
-		//document.getElementById("demoroot").innerHTML = rootModel;
-		document.getElementById("mySavedModel").value = rootModel;
-		load();
-		save();		
-	}
-}
-
-function addFunction() {
-  //var str = "How/are/you/doing/today?";
-  var pathname_val = document.getElementById('pathname').value;
-  var idea = document.getElementById('leafvalue').value;
-  if(pathname_val == "")
-  {
-	  //document.getElementById("demoDebug").innerHTML = "enter a path to add leaf";
-
-		if(idea != "")
-		{
-		  //document.getElementById("demoDebug").innerHTML = "enter an idea to add leaf";
-		  addLeafManual(idea, "coral", "right", 0);
-		  layoutAll();
-		  save();
-		}
-	  return;
-  }
-  
-  if(idea == "")
-  {
-	  document.getElementById("demoDebug").innerHTML = "enter an idea to add leaf";
-	  return;
-  }
-  var str1 = "\"path\":\"";
-  var str2 = str1.concat(pathname_val);
-  var str3 = "\", \n";
-  var res = str2.concat(str3);
-  document.getElementById("demoAdd").innerHTML = res;
-  var ressplit = pathname_val.split("/");
-  document.getElementById("demo").innerHTML = ressplit;
-  numberOfColons = ressplit.length - 1;
-  
-	if(ressplit.length == 1)
-	{
-		if(isvalidroot(ressplit[0]))
-		{
-			document.getElementById("demoDebug").innerHTML = "dont include root in the path";
+		clearLabels();
+		//document.getElementById('pathname').value = '';
+		//document.getElementById('leafvalue').value = '';		
+		var rootname_val = document.getElementById('rootname').value;
+		rootname_val = getCleanPath(rootname_val);
+		
+		if(checkForSlash(rootname_val) == false)
+		{document.getElementById('rootname').value = "";
+			return;
 		}
 		
-		if(isvalidnode(ressplit[0]))
+		if(checkKeyWord(rootname_val) == false)
 		{
-			var rparentLeafKey = getNodeParent(ressplit[0]);
-			
-			//admit all nodes are different
-			if( rparentLeafKey == 0)
-			{
-				var rcurrentleafrow = getNodeRow(ressplit[0]);
-				var rcurrentleafkey = getNodeKey(rcurrentleafrow);
-				var rcurrentleafdir = getNodeDir(rcurrentleafrow);
-				document.getElementById("demoDebug").innerHTML = rcurrentleafdir;
-				var rcurrentleafbrush = getNodeBrush(rcurrentleafrow);
-				
-				addLeafManual(idea, rcurrentleafbrush, rcurrentleafdir, rcurrentleafkey);
-				layoutAll();
-				save();
-
-			}
-			else
-			{
-				document.getElementById("demoDebug").innerHTML = "invalid Path dont lead to root";
-			}
+			document.getElementById('rootname').value = "";
+			return;
+		}	
+	
+		if(rootname_val != "")
+		{
+			var rootModel = "{\"class\": \"TreeModel\",\"nodeDataArray\": [{\"key\":0,\"text\":\"" +
+			rootname_val + "\",\"loc\":\"0 0\"}]}";
+			document.getElementById("mySavedModel").value = rootModel;
+			load();
+			save();		
+			document.getElementById('rootname').value ="";
 		}
 	}
-	
-    if(numberOfColons > 0)
-	{
-			if(isvalidroot(ressplit[0]))
-			{
-				document.getElementById("demoDebug").innerHTML = "dont include root in the path";
-			}
 
-			var parentLeafKey = 0;
-			var cheminValid = true;
-			while(cheminValid && numberOfColons > 0)
-			{
-				if(isvalidnode(ressplit[numberOfColons]))
-				{
-					parentLeafKey = getNodeParent(ressplit[numberOfColons]);
-					numberOfColons = numberOfColons - 1;
-				}
-				else
-				{
-					parentLeafKey = -1;
-					cheminValid = false;
-				}
-			}
-			//admit all nodes are different
-			if( parentLeafKey == 0)
-			{
-				numberOfColons = ressplit.length - 1;
-				var currentleafrow = getNodeRow(ressplit[numberOfColons]);
-				var currentleafkey = getNodeKey(currentleafrow);
-				var currentleafdir = getNodeDir(currentleafrow);
-				var currentleafbrush = getNodeBrush(currentleafrow);
-				
-				addLeafManual(idea, currentleafbrush, currentleafdir, currentleafkey);
-				layoutAll();
-				save();
-			}
-			else
-			{
-				document.getElementById("demoDebug").innerHTML = "invalid Path dont lead to root";
-			}			
-	}
-}
-
-function readFunction() {
-  //var str = "How/are/you/doing/today?";
-  var rpathname_val = document.getElementById('rpathname').value;
-  var str1 = "\"path\":\"";
-  var str2 = str1.concat(rpathname_val);
-  var str3 = "\", \n";
-  var res = str2.concat(str3);
-  document.getElementById("demoRead").innerHTML = res;
-  var ressplit = rpathname_val.split("/");
-  numberOfColons = ressplit.length - 1;
-    if(numberOfColons > 0)
-	{
-			if(isvalidroot(ressplit[0]))
-			{
-				document.getElementById("demo").innerHTML = "dont include root in the path";
-			}
-			
-			var parentLeafKey = 0;
-			var cheminValid = true;
-			while(cheminValid && numberOfColons > 0)
-			{
-				if(isvalidnode(ressplit[numberOfColons]))
-				{
-					parentLeafKey = getNodeParent(ressplit[numberOfColons]);
-					numberOfColons = numberOfColons - 1;
-				}
-				else
-				{
-					parentLeafKey = -1;
-					cheminValid = false;
-				}
-			}
-			//admit all nodes are different
-			if( parentLeafKey == 0)
-			{
-				numberOfColons = ressplit.length - 1;
-				var currentleafrow = getNodeRow(ressplit[numberOfColons]);
-				var currentleafkey = getNodeKey(currentleafrow);
-				if(currentleafkey != "")
-				{
-					//document.getElementById("demo").innerHTML = "it is the root";
-					var childText = getChildName(currentleafkey);
-					
-					if(childText != "")
-					{
-						str1 = "\"text\":";
-						str2 = str1.concat(childText);
-						str3 = " \n";
-						resChild = str2.concat(str3);
-						document.getElementById("demoShow").innerHTML = resChild;
-					}
-				}	
-			}
-			else
-			{
-				document.getElementById("demo").innerHTML = "invalid Path dont lead to root";
-			}			
-	}
-}
-
-function isvalidroot(txt)
-{
-	var bres = false;
-	var row = getNodeRow(txt);
-	if(row != "")
-	{
-		var nodeKey = getNodeKey(row);
-		if(nodeKey == "0")
+	function addLeaf() 
+	{	
+		clearLabels();
+		
+		var pathname_val = document.getElementById('pathname').value;
+		pathname_val = getCleanPath(pathname_val);
+	  	
+		var idea = document.getElementById('leafvalue').value;
+		idea = getCleanPath(idea);
+	  
+		 if(checkForSlash(idea) == false)
 		{
-			bres = true;
+			document.getElementById('leafvalue').value = "";
+			return;
+		}
+	  
+		if(checkKeyWord(idea) == false)
+		{
+			document.getElementById('leafvalue').value = "";
+			return;
+		}
+		  
+		if(idea == "")
+		{
+			var noideamsg = "Enter an idea to add leaf";
+			document.getElementById("demoDebug").innerHTML = noideamsg.fontcolor("orange");
+			return;
+		}
+	  
+		if(isValidNode(idea))
+		{
+			var existmsg = "the node : " + idea + " already exist";
+			document.getElementById("demoDebug").innerHTML = existmsg.fontcolor("orange");
+			return;
+		}	
+		
+		if(pathname_val == "")
+		{
+			if(idea != "")
+			{
+				const fewColors = ["skyblue", "darkseagreen", "palevioletred", "coral", "cadetblue", "chocolate", "aquamarine"];
+				const randomcolor = Math.floor(Math.random() * fewColors.length);
+			
+			  addLeafAndLink(idea, fewColors[randomcolor], "right", 0);
+			  layoutAll();
+			  save();
+			  document.getElementById("demoAdd").innerHTML = "\"path\":\" under the root" + "<br>";
+			  document.getElementById("demoEntry").innerHTML = "\"text\":" + idea + "<br>";
+			}
+		  return;
+		}
+
+	var str2 = "\"text\":" + "<br>";
+	var res = "\"path\":\"" + pathname_val + "<br>"; 
+	document.getElementById("demoAdd").innerHTML = res.bold();	  
+	  
+	var validPath = isValidPath(pathname_val);
+
+	var ressplit = pathname_val.split("/");	
+	//Assume that all the nodes are different
+	if(validPath == true)
+	{
+		var currentleafrow = getNodeRow(ressplit[ressplit.length - 1]);	
+
+		if(pathname_val =="")
+		{
+			currentleafrow = getNodeRow("\"key\":0");
+		}
+		var currentleafkey = getNodeParam(currentleafrow, "key");
+		
+		if(currentleafkey != "")
+		{		
+			var currentleafdir = getNodeParam(currentleafrow, "dir");
+			var currentleafbrush = getNodeParam(currentleafrow, "brush");
+			
+			currentleafdir = currentleafdir.substring(1, currentleafdir.length-1);
+			currentleafbrush = currentleafbrush.substring(1, currentleafbrush.length-1);
+		
+			addLeafAndLink(idea, currentleafbrush, currentleafdir, currentleafkey);
+			layoutAll();
+			save();
+			str2 = "\"text\":" + idea + "<br>";
 		}		
 	}
-	
-	return bres;
-}
-
-function getNodeRow(txt)
-{
-	var bres = "";
-	var mymodel = document.getElementById("mySavedModel").value;
-	var ntxt = mymodel.search(txt);
-	if(ntxt != -1)
+	else
 	{
-		var rowEndIndex = mymodel.indexOf('}', (ntxt + 1));
-		if(rowEndIndex != -1)
+		if(ressplit[0] != "" && isValidRoot(ressplit[0]))
 		{
-			var rowstr = mymodel.substring(0, rowEndIndex+1);
-			var rowStartIndex = rowstr.lastIndexOf('{', );
-			bres = rowstr.substr(rowStartIndex);
+			var rootmsg = "Do not include the root in the path";
+			document.getElementById("demoDebug").innerHTML = rootmsg.fontcolor("orange");
 		}
-	}	
-	return bres;
-}
-//to do use on single methode to getnodeParam(row, param) and remplace the numeric shift by len(param)
-function getNodeKey(txt)
-{
-	var bres = "";
-	var ntxt = txt.search("key");
-	if(ntxt != -1)
-	{
-		var keyEndIndex = txt.indexOf(',', (ntxt + 1));
-		if(keyEndIndex != -1)
+		else
 		{
-			bres = txt.substring(ntxt+5, keyEndIndex);
-		}
-	}	
-	return bres;
-}
-//to do use on single methode to getnodeParam(row, param) and remplace the numeric shift by len(param)
-function getNodeParent(txt)
-{
-	var bres = "";
-	var ntxt = txt.search("parent");
-	if(ntxt != -1)
-	{
-		var keyEndIndex = txt.indexOf(',', (ntxt + 1));
-		if(keyEndIndex != -1)
-		{
-			bres = txt.substring(ntxt+8, keyEndIndex);
-		}
-	}	
-	return bres;
-}
-//to do use on single methode to getnodeParam(row, param) and remplace the numeric shift by len(param)
-function getNodeName(txt)
-{
-	var bres = "";
-	var ntxt = txt.search("text");
-	if(ntxt != -1)
-	{
-		var nameEndIndex = txt.indexOf(',', (ntxt + 1));
-		if(nameEndIndex != -1)
-		{
-			bres = txt.substring(ntxt+6, nameEndIndex);
-		}
-	}	
-	return bres;
-}
-//to do use on single methode to getnodeParam(row, param) and remplace the numeric shift by len(param)
-function getNodeDir(txt)
-{
-	var bres = "";
-	var ntxt = txt.search("dir");
-	if(ntxt != -1)
-	{
-		var dirEndIndex = txt.indexOf(',', (ntxt + 1));
-		if(dirEndIndex != -1)
-		{
-			bres = txt.substring(ntxt+5, dirEndIndex);
-		}
-	}	
-	return bres;
-}
-//to do use on single methode to getnodeParam(row, param) and remplace the numeric shift by len(param)
-function getNodeBrush(txt)
-{
-	var bres = "";
-	var ntxt = txt.search("brush");
-	if(ntxt != -1)
-	{
-		var bEndIndex = txt.indexOf(',', (ntxt + 1));
-		if(bEndIndex != -1)
-		{
-			bres = txt.substring(ntxt+7, bEndIndex);
-		}
-	}	
-	return bres;
-}
-
-function isvalidnode(txt)
-{
-	var bres = false;
-	var row = getNodeRow(txt);
-	if(row != "")
-	{
-		var nodeParent = getNodeParent(row);
-		if(nodeParent != "")
-		{
-			bres = true;
+			var invalrootmsg = "invalid Path does not lead to root";
+			document.getElementById("demoDebug").innerHTML = invalrootmsg.fontcolor("orange");	
 		}		
+	}	
+	
+	document.getElementById("demoEntry").innerHTML = str2.bold();	  
+}
+
+	function afterAddLeaf()
+	{
+		document.getElementById('pathname').value ="";
+		document.getElementById('leafvalue').value ="";
 	}
 	
-	return bres;
+	function readLeaf() {
+
+	clearLabels();
+	//document.getElementById('pathname').value = '';
+	//document.getElementById('leafvalue').value = '';
+	  
+	var rpathname_val = document.getElementById('rpathname').value;  
+	    
+	rpathname_val = getCleanPath(rpathname_val);
+	
+	var str2 = "\"text\":" + "<br>";	
+    var str1 = "\"path\":\"" + rpathname_val + "<br>";
+    document.getElementById("demoRead").innerHTML = str1.bold();
+
+	var validPath = isValidPath(rpathname_val);
+	var ressplit = rpathname_val.split("/");	
+	//Assume that all the nodes are different
+	if(validPath == true)
+	{
+		var currentleafrow = getNodeRow(ressplit[ressplit.length - 1]);	
+
+		if(rpathname_val =="")
+		{
+			currentleafrow = getNodeRow("\"key\":0");
+		}
+		var currentleafkey = getNodeParam(currentleafrow, "key");
+		
+		if(currentleafkey != "")
+		{
+			var childText = getChildName(currentleafkey);
+			if(childText != "")
+			{
+				str2 = "\"text\":" + childText + "<br>";
+			}
+		}	
+	}
+	else
+	{
+		if(ressplit[0] != "" && isValidRoot(ressplit[0]))
+		{
+			var rootmsg = "Do not include the root in the path";
+			document.getElementById("demo").innerHTML = rootmsg.fontcolor("orange");
+		}
+		else
+		{
+			var invalrootmsg = "invalid Path does not lead to root";
+			document.getElementById("demo").innerHTML = invalrootmsg.fontcolor("orange");	
+		}
+	}			
+	
+	document.getElementById("demoShow").innerHTML = str2.bold();
 }
 
-function getChildName(parentkey)
-{
-	var childname = "";
+	function afterReadLeaf()
+	{
+		document.getElementById('rpathname').value ="";
+	}
 	
-	var tagParent = "\"parent\":" + parentkey +",";
-	var rowChild = getNodeRow(tagParent);
-	childname=getNodeName(rowChild); 
-	return childname;
-}
+	function clearLabels()
+	{
+		document.getElementById("demoAdd").innerHTML = "";
+		document.getElementById("demoEntry").innerHTML = "";
+		document.getElementById("demoDebug").innerHTML = "";
+		document.getElementById("demoRead").innerHTML = "";
+		document.getElementById("demoShow").innerHTML = "";
+		document.getElementById("demo").innerHTML = "";
+	}
+
+	function isValidRoot(txt)
+	{
+		var bres = false;
+		var row = getNodeRow(txt);
+		if(row != "")
+		{
+			var nodeKey = getNodeParam(row,"key");
+			if(nodeKey == "0")
+			{
+				bres = true;
+			}		
+		}
+		return bres;
+	}
+
+	function isValidNode(txt)
+	{
+		var bres = false;
+		var row = getNodeRow(txt);
+		if(row != "")
+		{
+			var nodeParent = getNodeParam(row, "parent");
+			if(nodeParent != "")
+			{
+				bres = true;
+			}		
+		}
+		return bres;
+	}
+	
+	function isValidPath(pathValue)
+	{
+		var bres = false;
+		
+		if(pathValue =="")
+		{
+			return true;
+		}
+		
+		var ressplit = pathValue.split("/");
+		
+		if(ressplit[0] != "" && isValidRoot(ressplit[0]))
+		{
+			document.getElementById("demo").innerHTML = "Do not include the root in the path";
+			return false;
+		}
+		
+		var numberOfColons = ressplit.length - 1; 		
+		var parentLeafKey = 0;
+		var cheminValid = true;
+		while(cheminValid && numberOfColons >= 0)
+		{
+			if(isValidNode(ressplit[numberOfColons]))
+			{
+				parentLeafKey = getNodeParam(ressplit[numberOfColons], "parent");
+				numberOfColons = numberOfColons - 1;
+			}
+			else
+			{
+				parentLeafKey = -1;
+				cheminValid = false;
+			}
+		}
+		
+		if(parentLeafKey == 0)
+		{
+			return true;
+		}
+		
+		return bres;
+	}
+
+	function getCleanPath(path)
+	{
+		if(path.length > 0)
+		{
+			var lastChar = path.substr(path.length - 1);
+			const arrayOfChars = ['/', '\\'];
+			const foundl = arrayOfChars.find(v => (lastChar === v));
+			if (foundl)
+			{
+				path = path.substr(0, path.length - 1);
+			}
+		}
+		
+		if(path.length > 0)
+		{
+			var firstChar = path.substr(0, 1);
+			const arrayOfCharsl = ['/', '\\'];
+			const foundf = arrayOfCharsl.find(w => (firstChar === w));
+			if (foundf)
+			{
+				path = path.slice(1);
+			}
+		}
+		
+		return path;	
+	}
+	
+	function checkKeyWord(idea)
+	{
+		var bres = true;
+		if(idea === "key" ||
+		idea === "dir" ||
+		idea === "parent" ||
+		idea === "brush" ||
+		idea === "text")
+	  {
+		  bres = false;
+		  {alert("key/dir/parent/brush/text are key words");		  
+		}
+	  }
+	  
+		if(idea.length > 0)
+		{	
+			var arrayOfChars = ['[', '{', '\"', ':', '}', ']', ','];
+			
+			for (var i = 0; i < arrayOfChars.length; i++)
+			{
+				if (idea.indexOf(arrayOfChars[i]) > -1) 
+				{
+					alert("[ { \" : } ] and , are prohibited characters");
+					bres = false;
+					return bres;
+				}
+			}
+		}
+	  
+	  return bres;
+	}
+	
+	function checkForSlash(pathIdea)
+	{
+		var bres = true;
+		if(pathIdea.includes("/"))
+		{alert("/ found inside your_string");
+		bres = false;
+		}
+		else if (pathIdea.indexOf('\\') > -1)
+		{
+		alert("\ found inside your_string");
+		bres = false;
+		}
+		return bres;
+	}
+
+	function getNodeRow(txt)
+	{
+		var bres = "";
+		var mymodel = document.getElementById("mySavedModel").value;
+		var ntxt = mymodel.search(txt);
+		if(ntxt != -1)
+		{
+			var rowEndIndex = mymodel.indexOf('}', (ntxt + 1));
+			if(rowEndIndex != -1)
+			{
+				var rowstr = mymodel.substring(0, rowEndIndex+1);
+				var rowStartIndex = rowstr.lastIndexOf('{', );
+				bres = rowstr.substr(rowStartIndex);
+			}
+		}	
+		return bres;
+	}
+		
+	function getNodeParam(txt, param)
+	{
+		var bres = "";
+		var ntxt = txt.search(param);
+		if(ntxt != -1)
+		{
+			var paramEndIndex = txt.indexOf(',', (ntxt + 1));
+			if(paramEndIndex != -1)
+			{
+				bres = txt.substring(ntxt + param.length+2, paramEndIndex);
+			}
+		}	
+		return bres;
+	}
+
+	function getChildName(parentkey)
+	{
+		var childname = "";	
+		var tagParent = "\"parent\":" + parentkey +",";
+		var rowChild = getNodeRow(tagParent);
+		childname = getNodeParam(rowChild, "text"); 
+		return childname;
+	}
+	
+	
+	//create a function that accepts an input variable (which key was key pressed) 
+function disableEnterKey(e){ 
+ 
+//create a variable to hold the number of the key that was pressed      
+var key; 
+ 
+    //if the users browser is internet explorer 
+    if(window.event){ 
+      
+    //store the key code (Key number) of the pressed key 
+    key = window.event.keyCode; 
+      
+    //otherwise, it is firefox 
+    } else { 
+      
+    //store the key code (Key number) of the pressed key 
+    key = e.which;      
+    } 
+      
+    //if key 13 is pressed (the enter key) 
+    if(key == 13){ 
+      
+    //do nothing 
+    return false; 
+      
+    //otherwise 
+    } else { 
+      
+    //continue as normal (allow the key press for keys other than "enter") 
+    return true; 
+    } 
+      
+//and don't forget to close the function     
+} 
 </script>
   
   <button id="SaveButton" onclick="save()">Save</button>
@@ -776,14 +876,14 @@ function getChildName(parentkey)
 { "class": "TreeModel",
   "nodeDataArray": [
 {"key":0,"text":"root","loc":"0 0"},
-{"text":"amine","parent":0,"key":-12,"brush":"palevioletred","loc":"50 -13"},
-{"text":"like","parent":-12,"key":-13,"brush":"palevioletred","loc":"105.4072265625 -26"},
+{"text":"amine","dir":"right","parent":0,"key":-12,"brush":"palevioletred","loc":"50 -13"},
+{"text":"like","dir":"right","parent":-12,"key":-13,"brush":"palevioletred","loc":"105.4072265625 -26"},
 {"text":"you","dir":"right","parent":0,"key":-14,"brush":"coral","loc":"73 48"},
 {"text":"work","dir":"right","parent":-14,"key":-15,"brush":"coral","loc":"123 35"},
 {"text":"play","dir":"right","parent":-14,"key":-16,"brush":"coral","loc":"123 61"},
-{"text":"eat","parent":-12,"key":-17,"brush":"palevioletred","loc":"105.4072265625 0"},
-{"text":"potatoes","parent":-13,"key":-18,"brush":"palevioletred","loc":"155.4072265625 -26"},
-{"text":"tomatoes","parent":-17,"key":-19,"brush":"palevioletred","loc":"155.4072265625 0"},
+{"text":"eat","dir":"right","parent":-12,"key":-17,"brush":"palevioletred","loc":"105.4072265625 0"},
+{"text":"potatoes","dir":"right","parent":-13,"key":-18,"brush":"palevioletred","loc":"155.4072265625 -26"},
+{"text":"tomatoes","dir":"right","parent":-17,"key":-19,"brush":"palevioletred","loc":"155.4072265625 0"},
 {"text":"Because reasons","parent":-18,"key":-20,"brush":"palevioletred","loc":"225.28076171875 -26"},
 {"text":"hard","dir":"right","parent":-15,"key":-21,"brush":"coral","loc":"173 35"},
 {"text":"more","dir":"right","parent":-16,"key":-22,"brush":"coral","loc":"173 61"}
@@ -793,11 +893,11 @@ function getChildName(parentkey)
   
 
 <form action="actionpage.php", method="post">
-  <label for="testparamname">save and exit</label>
+  <label for="testparamname">Save and Exit</label>
   <input type="text" id="testparamname" name="testparamname"><br><br>
   <input type="submit" value="save and exit">
 </form>
-<p>save the current mind map state in the sql db (db and table are create and the connection is established for demo)</p>
+<p>Save the current mind map state in the sql db (db and table are created and db connection is established for demo)</p>
 </div>
     </div>
     <!-- * * * * * * * * * * * * * -->
