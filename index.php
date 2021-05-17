@@ -696,8 +696,13 @@ Expected response:
 		{
 			if(isValidNode(ressplit[numberOfColons]))
 			{
-				parentLeafKey = getNodeParam(ressplit[numberOfColons], "parent");
-				numberOfColons = numberOfColons - 1;
+				var row = getNodeRow(ressplit[numberOfColons]);
+				if(row != "")
+				{
+					parentLeafKey = getNodeParam(row, "parent");
+					//document.getElementById("demo").innerHTML = parentLeafKey;	
+					numberOfColons = numberOfColons - 1;
+				}
 			}
 			else
 			{
@@ -830,41 +835,36 @@ Expected response:
 		return childname;
 	}
 	
-	
-	//create a function that accepts an input variable (which key was key pressed) 
-function disableEnterKey(e){ 
- 
-//create a variable to hold the number of the key that was pressed      
-var key; 
- 
-    //if the users browser is internet explorer 
-    if(window.event){ 
-      
-    //store the key code (Key number) of the pressed key 
-    key = window.event.keyCode; 
-      
-    //otherwise, it is firefox 
-    } else { 
-      
-    //store the key code (Key number) of the pressed key 
-    key = e.which;      
-    } 
-      
-    //if key 13 is pressed (the enter key) 
-    if(key == 13){ 
-      
-    //do nothing 
-    return false; 
-      
-    //otherwise 
-    } else { 
-      
-    //continue as normal (allow the key press for keys other than "enter") 
-    return true; 
-    } 
-      
-//and don't forget to close the function     
-} 
+	//accepts an input variable (which key was key pressed) 
+	function disableEnterKey(e)
+	{  
+		//create a variable to hold the number of the key that was pressed      
+		var key; 
+		//if the users browser is internet explorer 
+		if(window.event)
+		{      
+			//store the key code (Key number) of the pressed key 
+			key = window.event.keyCode;      
+			//otherwise, it is firefox 
+		} 
+		else
+		{      
+			//store the key code (Key number) of the pressed key 
+			key = e.which;      
+		}     
+		//if key 13 is pressed (the enter key) 
+		if(key == 13)
+		{      
+			//do nothing 
+			return false;      
+			//otherwise 
+		} 
+		else
+		{       
+			//continue as normal (allow the key press for keys other than "enter") 
+			return true; 
+		}  
+	} 
 </script>
   
   <button id="SaveButton" onclick="save()">Save</button>

@@ -22,16 +22,16 @@ w\:* {behavior:url(#default#VML);}
  <o:DocumentProperties>
   <o:Author>Amine Med</o:Author>
   <o:LastAuthor>Amine Med</o:LastAuthor>
-  <o:Revision>17</o:Revision>
-  <o:TotalTime>77</o:TotalTime>
+  <o:Revision>18</o:Revision>
+  <o:TotalTime>78</o:TotalTime>
   <o:Created>2021-05-10T13:36:00Z</o:Created>
-  <o:LastSaved>2021-05-17T06:11:00Z</o:LastSaved>
+  <o:LastSaved>2021-05-17T11:15:00Z</o:LastSaved>
   <o:Pages>3</o:Pages>
-  <o:Words>477</o:Words>
-  <o:Characters>2628</o:Characters>
+  <o:Words>479</o:Words>
+  <o:Characters>2636</o:Characters>
   <o:Lines>21</o:Lines>
   <o:Paragraphs>6</o:Paragraphs>
-  <o:CharactersWithSpaces>3099</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>3109</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -991,8 +991,8 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>L&#8217;&eacute;tat
 par d&eacute;faut de la <span class=SpellE>mind</span> <span class=SpellE>map</span>
 est charg&eacute; &agrave; partir du fichier texte
-&laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo; sauvegard&eacute; dans le r&eacute;pertoire
-du projet (racine).<o:p></o:p></span></p>
+&laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo; sauvegard&eacute; dans le
+r&eacute;pertoire du projet (racine).<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
@@ -1012,9 +1012,9 @@ style='mso-fareast-font-family:"Times New Roman"'><span style='mso-list:Ignore'>
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Si
 vous choisissez de modifier le <span class=SpellE>mind</span> <span
-class=SpellE>map</span> &agrave; partir de l&#8217;&eacute;diteur graphique n&#8217;oublier
-pas de cliquer sur le bouton <span class=SpellE><b style='mso-bidi-font-weight:
-normal'>save</b></span>.<o:p></o:p></span></p>
+class=SpellE>map</span> &agrave; partir de l&#8217;&eacute;diteur graphique
+n&#8217;oublier pas de cliquer sur le bouton <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>save</b></span>.<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
 
@@ -1033,7 +1033,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman"'>Il
 est aussi possible de copier le contenu d&#8217;un fichier dans \<span
 class=SpellE>Downloads</span> et le coller directement dans la grande zone de
-texte en bas de la page html et cliquer sur <span class=SpellE><b
+texte en bas de la page html et cliquer sur le bouton <span class=SpellE><b
 style='mso-bidi-font-weight:normal'>Load</b></span>. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-fareast-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
@@ -1068,8 +1068,8 @@ normal'>faut remplacer le fichier</b>
 &laquo;&nbsp;mindMapRecord.txt&nbsp;&raquo; dans le dossier du projet par celui
 dans <b style='mso-bidi-font-weight:normal'>T&eacute;l&eacute;chargement</b>,
 le plus r&eacute;cent, <b style='mso-bidi-font-weight:normal'>avant</b>
-d&#8217;ouvrir la page. Ou bien copier le contenu du fichier et le coller
-directement dans la grande zone de texte en bas de la page html et cliquer sur <span
+d&#8217;ouvrir la page. Ou bien copier le contenu du fichier et coller le directement
+dans la grande zone de texte en bas de la page html et cliquer sur <span
 class=SpellE><b style='mso-bidi-font-weight:normal'>Load</b></span><b
 style='mso-bidi-font-weight:normal'>.</b><o:p></o:p></span></p>
 
@@ -1203,7 +1203,7 @@ seulement le text.<o:p></o:p></span></p>
  style='width:281.4pt;height:129.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="README_files/image001.png" o:title=""/>
 </v:shape><![endif]--><![if !vml]><img border=0 width=469 height=216
-src="README_files/image002.jpg" v:shapes="Picture_x0020_3"><![endif]></span><span
+src="README_files/image003.jpg" v:shapes="Picture_x0020_3"><![endif]></span><span
 lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:yes'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
